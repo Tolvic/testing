@@ -2,15 +2,14 @@
 From the 25th February - 1st of March, BGL put on a learning and development week, where we could spend the week on our own personal learning and development. I decided on spend that week on learning testing.
 
 ## To Do
+Please note that the links in this section link to material to be/ has been reviewed. The output of these tasks can be found in the other sections of this document.
+
 - [ ] Testing in General
-  - [ ] [Test First Development - Plural Sight](https://www.pluralsight.com/courses/test-first-development-1)
-  - [ ] Types of tests
-    - [ ] Unit
-    - [ ] Feature
-    - [ ] Functional
-    - [ ] End to End
-    - [ ] Integration
-    - [ ] Etc.
+  - [x] Types of testing
+    - [x] Unit testing
+    - [x] Integration testing
+    - [x] Functional testing
+    - [x] End to End testing
   - [ ] [Configuring a test environment for web deployment - MS Docs](https://docs.microsoft.com/en-us/aspnet/web-forms/overview/deployment/configuring-server-environments-for-web-deployment/scenario-configuring-a-test-environment-for-web-deployment)
   - [ ] [Integration Tests - MS Docs](https://docs.microsoft.com/en-gb/aspnet/core/test/integration-tests?view=aspnetcore-2.2)
 - [ ] Unit testing and NUnit
@@ -59,3 +58,6 @@ From the 25th February - 1st of March, BGL put on a learning and development wee
  - [ ] Best practices
  - [ ] Speed and performance
  - [ ] cheat sheet
+
+## Overview
+* [Types of testing](/Notes/testing-types.md)
