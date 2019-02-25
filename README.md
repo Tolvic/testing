@@ -10,8 +10,6 @@ Please note that the links in this section link to material to be/ has been revi
     - [x] Integration testing
     - [x] Functional testing
     - [x] End to End testing
-  - [ ] [Configuring a test environment for web deployment - MS Docs](https://docs.microsoft.com/en-us/aspnet/web-forms/overview/deployment/configuring-server-environments-for-web-deployment/scenario-configuring-a-test-environment-for-web-deployment)
-  - [ ] [Integration Tests - MS Docs](https://docs.microsoft.com/en-gb/aspnet/core/test/integration-tests?view=aspnetcore-2.2)
 - [ ] Unit testing and NUnit
  - [x] Review Microsoft documentation
  - [ ] Review NUnit Documentation
@@ -23,6 +21,7 @@ Please note that the links in this section link to material to be/ has been revi
  - [ ] [Testing controller logic](https://docs.microsoft.com/en-gb/aspnet/core/mvc/controllers/testing?view=aspnetcore-2.2)
  - [ ] [Unit testing web APIs](https://docs.microsoft.com/en-us/aspnet/web-api/overview/testing-and-debugging/unit-testing-with-aspnet-web-api)
  - [ ] [Unit testing controllers with Web APIs](https://docs.microsoft.com/en-us/aspnet/web-api/overview/testing-and-debugging/unit-testing-controllers-in-web-api)
+  - [ ] [Integration Tests - MS Docs](https://docs.microsoft.com/en-gb/aspnet/core/test/integration-tests?view=aspnetcore-2.2)
  - [ ] Coverage metric
  - [ ] Setup and tear down
  - [ ] Helper classes and functions
@@ -59,5 +58,24 @@ Please note that the links in this section link to material to be/ has been revi
  - [ ] Speed and performance
  - [ ] cheat sheet
 
-## Overview
+## Testing Overview
 * [Types of testing](/Notes/testing-types.md)
+
+## NUnit
+### Attributes
+NUnit supports a wide range of attributes. A full list can be found [here](https://github.com/nunit/docs/wiki/Attributes). Some notable attributes include:
+* Combinational Attribute
+* Description Attribute
+* Explicit Attribute
+* Ignore Attribute
+* MaxTime Attribute
+* OneTimeSetUp Attribute
+* OneTimeTearDown Attribute
+* Random Attribute
+* Range Attribute
+* SetUpFixture Attribute
+* TearDown Attribute
+* Test Attribute
+* TestCase Attribute
+* TestFixture Attribute
+* Timeout Attribute
