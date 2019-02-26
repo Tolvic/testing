@@ -135,3 +135,34 @@ Assert.Warn("Warning message");
 ```
 
 Each of the above items would fail. The test would continue to execute, however, and the warning messages would only be reported at the end of the test.
+
+## SetUp and TearDown
+Multiple SetUp, OneTimeSetUp, TearDown and OneTimeTearDown methods may exist within a class.
+
+Setup methods (both types) are called on base classes first, then on derived classes. If any setup method throws an exception, no further setups are called.
+
+Teardown methods (again, both types) are called on derived classes first, then on the base class. The teardown methods at any level in the inheritance hierarchy will be called only if a setup method at the same level was called. The following example is illustrates the difference.
+
+```csharp
+public class BaseClass
+{
+   [SetUp]
+   public void BaseSetUp() { ... } // Exception thrown!
+
+   [TearDown]
+   public void BaseTearDown() { ... }
+}
+
+[TestFixture]
+public class DerivedClass : BaseClass
+{
+   [SetUp]
+   public void DerivedSetUp() { ... }
+
+   [TearDown]
+   public void DerivedTearDown() { ... }
+
+   [Test]
+   public void TestMethod() { ... }
+}
+```
