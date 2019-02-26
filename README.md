@@ -79,3 +79,37 @@ NUnit supports a wide range of attributes. A full list can be found [here](https
 * TestCase Attribute
 * TestFixture Attribute
 * Timeout Attribute
+
+## Asertions
+If an assertion fails, the method call does not return and an error is reported. If a test contains multiple assertions, any assertion that follow the one that failed will not be executed. For this reason, it's usually best to try for one assertion per test.
+
+In NUnit 3.0, assertions are written primarily using the `Assert.That` method, which takes constraint objects as an argument.
+
+![NUnit Assertion Constraint Model](/Images/NUnit_Assertion_Constraint_Model)
+
+### Constraints
+A list of constraints can be found [here](https://github.com/nunit/docs/wiki/Constraints).
+
+### Multiple Assertions
+Typically, once an assertion fails, the test to terminate.
+To continue the test and accumulate any additional failures, multiple asserts are implemented using the `Assert.Multiple` method:
+
+```csharp
+[Test]
+public void ComplexNumberTest()
+{
+    ComplexNumber result = SomeCalculation();
+
+    Assert.Multiple(() =>
+    {
+        Assert.AreEqual(5.2, result.RealPart, "Real part");
+        Assert.AreEqual(3.9, result.ImaginaryPart, "Imaginary part");
+    });
+}
+```
+
+This results in NUnit storing any failures encountered in the block and reporting all of them together upon exit from the block.
+
+Note:
+* Multiple assert blocks may be nested. Failure is not reported until the outermost block exits.
+* The test will be terminated immediately if any exception is thrown that is not handled. An unexpected exception is often an indication that the test itself is in error, so it must be terminated.
