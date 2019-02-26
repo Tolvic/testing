@@ -1,5 +1,4 @@
 # NUnit
-
 * [Creating a Test Project](#creating-a-test-project)
 * [Writing Unit Tests with NUnit](#writing-unit-tests-with-nunit)
  + [Assertions](#assertions)
@@ -244,7 +243,6 @@ Constraints can be divided into eight categories:
 
 
 #### Comparison Constraints
-
 Equal Constraint Example:
 
 ```csharp
@@ -391,7 +389,7 @@ Assert.That(array, Is.Ordered.Ascending);
 
 Descending:
 
-```csharp:
+```csharp
 Assert.That(array, Is.Ordered.Descending);
 ```
 
@@ -630,8 +628,6 @@ public void ReturnFalseGivenValuesLessThan2(int value)
 
 In the above example, we have fixed the result to false. But by using ExpectedResult property, we can also specify different results for different parameters. Below is the example:
 
-
-
 ```csharp
 [TestCase(29, ExpectedResult = false)]
 [TestCase(0, ExpectedResult = false)]
@@ -656,7 +652,6 @@ The `TestCase` Attribute supports a number of [additional named parameters](http
 * `ExpectedResult` sets the expected result to be returned from the method, which must have a compatible return type.
 * `Ignore` causes the test case to be ignored and specifies the reason.
 * `TestName` provides a name for the test. If not specified, a name is generated based on the method name and the arguments provided. See Template Based Test Naming.
-
 
 #### Test Exception
 When we expect our test to raise an exception, use NUnit’s ```[ExpectedException]``` attribute.
@@ -685,9 +680,6 @@ public void Encoding ()
     authenticator.EncodePassword(null);
 }
 ```
-
-
-
 
 ## SetUp and TearDown
 Setup refers to some setup activities that need to be carried out before each test runs and tear down refers to finishing activities that need to be carried out after all tests have run.
@@ -772,3 +764,51 @@ public class DerivedClass : BaseClass
    public void TestMethod() { ... }
 }
 ```
+
+## Fakes, Mocks and Stubbing
+### Fakes
+A fake is a class that you can use instead of actual line of business code.  A fake implementation might look something like this:
+
+```csharp
+public class FakeLoginService:ILoginService
+{
+    public int ValidateUser(string userName, string password)
+    {
+        return 5;
+    }
+}
+```
+
+This code contains no real business functionality; it is hard coded to return 5. However, it does provide two important benefits:
+1. It allows you to write your first unit test.
+2. It eliminates the need for a real Login Service, isolating dependent code from integration issues.
+
+### Mocks
+Mock objects are objects that replace the real objects and return hard-coded values. This helps test the class in isolation.
+
+Mock objects can be used in the following cases:
+* The real object has a nondeterministic behavior (it produces unpredictable results, like a date or the current weather temperature)
+* The real object is difficult to set up
+* The behaviour of the real object is hard to trigger (for example, a network error)
+* The real object is slow
+* The real object has (or is) a user interface
+* The test needs to ask the real object how it was used (for example, a test may need to confirm that a callback function was actually called)
+* The real object does not yet exist (a common problem when interfacing with other teams or new hardware systems)
+
+The three key steps to using mock objects for testing are:
+
+1. Use an interface to describe the object.
+2. Implement the interface for production code.
+3. Implement the interface in a mock object for testing.
+
+### Stubs
+Stubs provide canned answers to calls made during the test
+
+Mocks are used to validate that the interactions between objects behave as expected.
+
+***
+The most popular mocking framework is Moq: https://github.com/Moq/moq4
+
+This is an example of Moq being used to double Database connections created using Entity framework
+
+https://docs.microsoft.com/en-us/ef/ef6/fundamentals/testing/mocking

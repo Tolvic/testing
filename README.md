@@ -23,7 +23,7 @@ Please note that the links in this section link to material to be/ has been revi
  - [ ] [Unit testing controllers with Web APIs](https://docs.microsoft.com/en-us/aspnet/web-api/overview/testing-and-debugging/unit-testing-controllers-in-web-api)
   - [ ] [Integration Tests - MS Docs](https://docs.microsoft.com/en-gb/aspnet/core/test/integration-tests?view=aspnetcore-2.2)
  - [ ] Coverage metric
- - [ ] Setup and tear down
+ - [x] Setup and tear down
  - [ ] Helper classes and functions
  - [ ] Mocking and stubbing
  - [ ] Best practices
