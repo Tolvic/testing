@@ -85,7 +85,7 @@ If an assertion fails, the method call does not return and an error is reported.
 
 In NUnit 3.0, assertions are written primarily using the `Assert.That` method, which takes constraint objects as an argument.
 
-![NUnit Assertion Constraint Model](/Images/NUnit_Assertion_Constraint_Model)
+![https://github.com/Tolvic/testing/blob/master/Images/NUnit_Assertion_Constraint_Model.PNG](/Images/NUnit_Assertion_Constraint_Model)
 
 ### Constraints
 A list of constraints can be found [here](https://github.com/nunit/docs/wiki/Constraints).
