@@ -114,6 +114,18 @@ Note:
 * Multiple assert blocks may be nested. Failure is not reported until the outermost block exits.
 * The test will be terminated immediately if any exception is thrown that is not handled. An unexpected exception is often an indication that the test itself is in error, so it must be terminated.
 
+### ListMapper
+`ListMapper` is used to modify the actual value argument to `Assert.That()`. It transforms the actual value, which must be a collection, creating a new collection to be tested against the supplied constraint.
+
+Example:
+
+```csharp
+string[] strings = new string[] { "a", "ab", "abc" };
+int[] lengths = new int[] { 1, 2, 3 };
+
+Assert.That(List.Map(strings).Property("Length"), Is.EqualTo(lengths));
+```
+
 ### Warnings
 Sometimes - especially in integration testing - it's desirable to give a warning message but continue execution. Beginning with release 3.6, NUnit supports this with the Warn class and the `Assert.Warn` method.
 
