@@ -1,6 +1,8 @@
 # NUnit
 
 * [Creating a Test Project](#creating-a-test-project)
+  + [Command Line](#command-line)
+  + [Visual Studio GUI](#visual-studio-gui)
 * [Writing Unit Tests with NUnit](#writing-unit-tests-with-nunit)
   + [Assertions](#assertions)
     - [Multiple Assertions](#multiple-assertions)
@@ -28,6 +30,7 @@
 
 ## Creating a Test Project
 
+### Command Line
 1. Create the `ProjectName.Tests` directory. The following outline shows the directory structure:
 
 ```
@@ -87,6 +90,28 @@ dotnet sln add ./ProjectName.Tests/ProjectName.Tests.csproj
 6. Rename the `UnitTest1.cs` file to `ProjectName_ClassNameShould.cs`
 
 When you open the root solution, you should now see your project and test project in the solution panel of Visual Studio.
+
+### Visual Studio GUI
+
+1. Create a new unit test project by right clicking on your solution and clicking 'add'
+
+![](https://docs.microsoft.com/en-us/visualstudio/test/media/createunittest1.png?view=vs-2017)
+
+2. Select Visual c# > Web > Test from the left panel. Select 'NUnit Test Project (.NET Core)'. Name your project and click OK.
+
+![](https://docs.microsoft.com/en-us/visualstudio/test/media/createunittest2.png?view=vs-2017)
+
+Your test project will now be added to your solution.
+
+![](https://docs.microsoft.com/en-us/visualstudio/test/media/createunittest5.png?view=vs-2017)
+
+3. In the test project, add a reference to the project that you want to test by TestProject > References > right click > Add References
+
+![](https://docs.microsoft.com/en-us/visualstudio/test/media/createunittest6.png?view=vs-2017)
+
+4. Select the project that contains the code you'll test
+
+![](https://docs.microsoft.com/en-us/visualstudio/test/media/createunittest7.png?view=vs-2017)
 
 ## Writing Unit Tests with NUnit
 The below is an example of a unit tests that tests whether the method `IsPrime`, (from the class `PrimeServices` which is stored on the namespace `Prime.Services`) returns false when 1 is passed into it.

@@ -27,6 +27,8 @@ From the 25th February - 1st of March, BGL put on a learning and development wee
     + [Stub Static References](#stub-static-references)
 * [NUnit](/Notes/NUnit.md)
   * [Creating a Test Project](/Notes/NUnit.md#creating-a-test-project)
+    + [Command Line](/Notes/NUnit.md#command-line)
+    + [Visual Studio GUI](/Notes/NUnit.md#visual-studio-gui)
   * [Writing Unit Tests with NUnit](/Notes/NUnit.md#writing-unit-tests-with-nunit)
     + [Assertions](/Notes/NUnit.md#assertions)
       - [Multiple Assertions](/Notes/NUnit.md#multiple-assertions)
