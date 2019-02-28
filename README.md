@@ -26,7 +26,7 @@ Please note that the links in this section link to material to be/ has been revi
  - [x] Setup and tear down
  - [ ] Helper classes and functions
  - [ ] Mocking and stubbing
- - [ ] Best practices
+ - [x] Best practices
  - [ ] Speed and performance
  - [ ] Cheat sheet
 - [ ] Mocking and stubbing with Moq
@@ -55,9 +55,15 @@ Please note that the links in this section link to material to be/ has been revi
  - [ ] Helper classes and functions
  - [ ] Mocking and stubbing - spy
  - [ ] Best practices
- - [ ] Speed and performance
+ - [ ] [Speed and performance](https://seleniumjava.com/2015/12/12/how-to-make-selenium-webdriver-scripts-faster/)
  - [ ] cheat sheet
 
 ## Testing Overview
+Test Driven Development
 * [Types of testing](/Notes/testing-types.md)
+Best Practices
+* [Fixing Flaky tests](/Notes/Non-Deterministic-Tests.md)
+Unit Tests
+* [Overview](/Notes/Unit-Tests.md)
 * [NUnit](/Notes/NUnit.md)
+* Fakes, Mocks and Stubs

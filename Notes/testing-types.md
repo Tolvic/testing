@@ -8,7 +8,9 @@ A unit is the smallest testable part of any software. In object-oriented program
 
 Tests should be written in isolation. Interactions with other methods, classes, databases should be mocked.
 
-Unit testing frameworks include NUnit and Jasmine.
+Unit testing frameworks include [NUnit](/NUnit.md) and Jasmine.
+
+More Info can be found [here](/Unit-Tests.md)
 
 ## Integration Tests
 Integration testing is where individual units are combined and tested as a group.
