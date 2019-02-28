@@ -53,6 +53,7 @@ From the 25th February - 1st of March, BGL put on a learning and development wee
     + [Fakes](/Notes/NUnit.md#fakes)
     + [Mocks](/Notes/NUnit.md#mocks)
     + [Stubs](/Notes/NUnit.md#stubs)
+  * [Code Coverage](/Notes/NUnit.md#code-coverage)
 * [Fixing Flaky tests](/Notes/Non-Deterministic-Tests.md)
   * [What is a Non-Deterministic Test?](/Notes/Non-Deterministic-Tests.md#what-is-a-non-deterministic-test-)
   * [Common Causes and Fixes](/Notes/Non-Deterministic-Tests.md#common-causes-and-fixes)
@@ -80,7 +81,7 @@ Please note that the links in this section link to material to be/ has been revi
  - [ ] [Introduction to .NET Testing with NUnit 3 - Plural Sight](https://www.pluralsight.com/courses/nunit-3-dotnet-testing-introduction)
  - [x] [Creating unit tests for ASP.Net applications - MS Docs](https://docs.microsoft.com/en-us/aspnet/mvc/overview/older-versions-1/unit-testing/creating-unit-tests-for-asp-net-mvc-applications-cs )
  - [x] [Testing controller logic](https://docs.microsoft.com/en-gb/aspnet/core/mvc/controllers/testing?view=aspnetcore-2.2)
- - [ ] Coverage metric
+ - [x] Coverage metric
  - [x] Setup and tear down
  - [ ] Helper classes and functions
  - [x] Mocking and stubbing

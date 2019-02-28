@@ -27,6 +27,7 @@
   + [Fakes](#fakes)
   + [Mocks](#mocks)
   + [Stubs](#stubs)
+* [Code Coverage](#code-coverage)
 
 ## Creating a Test Project
 
@@ -835,9 +836,13 @@ Stubs provide canned answers to calls made during the test
 
 Mocks are used to validate that the interactions between objects behave as expected.
 
-***
 The most popular mocking framework is Moq: https://github.com/Moq/moq4
 
-This is an example of Moq being used to double Database connections created using Entity framework
+## Code Coverage
+Code coverage is a term used to describe the proportion of a project’s code that is actively covered by unit tests. However, care must be taken to ensure that quality is also taken into account – the code might only be covered by a single, rudimentary test that only verifies one scenario.
 
-https://docs.microsoft.com/en-us/ef/ef6/fundamentals/testing/mocking
+With ReSharper, you can use [dotCover](https://www.jetbrains.com/dotcover/) to analyze the coverage of your unit tests
+
+Right click your solution > Cover Unit Tests
+
+Visual Studio also has a built in coverage analysis. More info here: https://docs.microsoft.com/en-us/visualstudio/test/using-code-coverage-to-determine-how-much-code-is-being-tested?view=vs-2017
