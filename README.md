@@ -76,13 +76,13 @@ From the 25th February - 1st of March, BGL put on a learning and development wee
      - [x] Review NUnit Documentation
      - [x] [Unit testing with NUnit - MS Docs](https://docs.microsoft.com/en-gb/dotnet/core/testing/unit-testing-with-nunit?view=aspnetcore-2.2)
      - [ ] [Introduction to .NET Testing with NUnit 3 - Plural Sight](https://www.pluralsight.com/courses/nunit-3-dotnet-testing-introduction)
-      - [ ] [Creating unit tests for ASP.Net applications - MS Docs](https://docs.microsoft.com/en-us/aspnet/mvc/overview/older-versions-1/unit-testing/creating-unit-tests-for-asp-net-mvc-applications-cs )
-     - [ ] [Running Selective Unit Tests - MS Docs](https://docs.microsoft.com/en-gb/dotnet/core/testing/selective-unit-tests?view=aspnetcore-2.2)
-     - [ ] [Razor Page Unit Tests](https://docs.microsoft.com/en-gb/aspnet/core/test/razor-pages-tests?view=aspnetcore-2.2)
+     - [x] [Creating unit tests for ASP.Net applications - MS Docs](https://docs.microsoft.com/en-us/aspnet/mvc/overview/older-versions-1/unit-testing/creating-unit-tests-for-asp-net-mvc-applications-cs )
      - [ ] [Testing controller logic](https://docs.microsoft.com/en-gb/aspnet/core/mvc/controllers/testing?view=aspnetcore-2.2)
+     - [ ] [Razor Page Unit Tests](https://docs.microsoft.com/en-gb/aspnet/core/test/razor-pages-tests?view=aspnetcore-2.2)
      - [ ] [Unit testing web APIs](https://docs.microsoft.com/en-us/aspnet/web-api/overview/testing-and-debugging/unit-testing-with-aspnet-web-api)
      - [ ] [Unit testing controllers with Web APIs](https://docs.microsoft.com/en-us/aspnet/web-api/overview/testing-and-debugging/unit-testing-controllers-in-web-api)
-      - [ ] [Integration Tests - MS Docs](https://docs.microsoft.com/en-gb/aspnet/core/test/integration-tests?view=aspnetcore-2.2)
+     - [ ] [Running Selective Unit Tests - MS Docs](https://docs.microsoft.com/en-gb/dotnet/core/testing/selective-unit-tests?view=aspnetcore-2.2)
+     - [ ] [Integration Tests - MS Docs](https://docs.microsoft.com/en-gb/aspnet/core/test/integration-tests?view=aspnetcore-2.2)
      - [ ] Coverage metric
      - [x] Setup and tear down
      - [ ] Helper classes and functions
