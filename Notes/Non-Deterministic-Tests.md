@@ -1,9 +1,19 @@
-# Non-Deterministic (Flakey) tests - Common Causes and Remeidies 
-
-Sumamry of Eradicating Non-Determinism in Tests by Martin Fowler
+# Non-Deterministic (Flakey) tests
+A summary of Eradicating Non-Determinism in Tests by Martin Fowler
 
 https://martinfowler.com/articles/nonDeterminism.html
 
+* [What is a Non-Deterministic Test?](#what-is-a-non-deterministic-test-)
+* [Common Causes and Fixes](#common-causes-and-fixes)
+  + [Lack of Isolation](#lack-of-isolation)
+  + [Asynchronous Behaviour](#asynchronous-behaviour)
+    - [Callback](#callback)
+    - [Polling the Response](#polling-the-response)
+  + [Remote Services](#remote-services)
+  + [Time](#time)
+  + [Resource Leaks](#resource-leaks)
+
+## What is a Non-Deterministic Test?
 A non-deterministic tests is a test that sometimes passes and sometimes fails.  Such tests fail, then you re-run them and they pass. Test failures for such tests are seemingly random.
 
 Non-deterministic tests are a problem because:
@@ -11,16 +21,16 @@ Non-deterministic tests are a problem because:
 2. You lose confidence in your entire testing suite
 3. increases the time it take to run the tests an get code into production
 
-## Common Causes
+## Common Causes and Fixes
 * lack of isolation
 * asynchronous behaviour
-* remote srvices
+* remote services
 * time
 * resource leak
 
 ### Lack of Isolation
 
-In order to get tests to run reliably, you must have clear control over the environment in which they run, so you have a well-known state at the beginning of the test. 
+In order to get tests to run reliably, you must have clear control over the environment in which they run, so you have a well-known state at the beginning of the test.
 
 If one test creates or modifies some data and leaves it lying around, it can corrupt the run of another test which may rely on a different state.
 
@@ -30,7 +40,7 @@ It is therefore really important to focus on keeping tests isolated. Properly is
 > * always rebuild your starting state from scratch,
 > * ensure that each test cleans up properly after itself
 
-When using databases, conduct your tests inside a transaction and then rollback the transaction at the end of the tests. This is quicker and as the transaction managers clearns up less error prone. 
+When using databases, conduct your tests inside a transaction and then rollback the transaction at the end of the tests. This is quicker and as the transaction managers clearns up less error prone.
 
 Be are of static data or singltons (an object that is created once only and is used where ever it is requestsed)
 
@@ -59,7 +69,7 @@ There are two tactics for testing asynchronous responses:
 2. Polling the response
 
 #### Callback
-The first method is for the asynchronous service to take a callback which it can call when done. 
+The first method is for the asynchronous service to take a callback which it can call when done.
 
 This is the best since it means you'll never have to wait any longer than you need to. you'll still need a timeout in case you never get a reply but you will set that timeout to be pretty high
 
@@ -71,7 +81,7 @@ This is looking periodically for the the response:
 makeAsyncCall
 startTime = Time.now;
 while(! responseReceived) {
-  if (Time.now - startTime > waitLimit) 
+  if (Time.now - startTime > waitLimit)
   {
     throw new TestTimeoutException;
   }
@@ -93,23 +103,23 @@ https://martinfowler.com/books/meszaros.html contains lots of good patterns for 
 ### Remote Services
 Often remote systems don't have test system we can call, which means hitting a live system. If there is a test system, it may not be stable enough to provide deterministic responses.
 
-In this situation it's vital to ensure determinism, so it's time to reach for a [Test Double](https://martinfowler.com/bliki/TestDouble.html) - a component that looks like the remote service, but is really just a pretend version that mimics the remote system's behavior. 
+In this situation it's vital to ensure determinism, so it's time to reach for a [Test Double](https://martinfowler.com/bliki/TestDouble.html) - a component that looks like the remote service, but is really just a pretend version that mimics the remote system's behavior.
 
 
 ### Time
-Few things are more non-deterministic than a call to the system clock. Each time you call it, you get a new result, and any tests that depend on it can thus change. 
+Few things are more non-deterministic than a call to the system clock. Each time you call it, you get a new result, and any tests that depend on it can thus change.
 
 The most important thing here is to ensure that you always wrap the system clock with routines that can be replaced with a seeded value for testing. A clock stub can be set to particular time and frozen at that time, allowing your tests to have complete control over its movements. That way you can synchronize your test data to the values in the seeded clock.
 
 > Always wrap the system clock, so it can be easily substituted for testing.
 
 ### Resource Leaks
-A resource leak referes to any resource that the application has to manage by acquiring and releasing. 
+A resource leak referes to any resource that the application has to manage by acquiring and releasing.
 
 Examples of resource that are expensive to create and maintain are database connections and threads
 
-If the application has some kind of resource leak, it will lead to random tests failing since its just the test test that caused the resource leak to go over the limit that gets the failure. 
+If the application has some kind of resource leak, it will lead to random tests failing since its just the test test that caused the resource leak to go over the limit that gets the failure.
 
-If it isn't a case of one test being non-deterministic, then resource leaks are a good candidtae to investigate. 
+If it isn't a case of one test being non-deterministic, then resource leaks are a good candidtae to investigate.
 
-Usually the best way to handle these kind of resources is through a [Resource Pool](https://martinfowler.com/bliki/ResourcePool.html) configured with a pool size of 1 and making it throw an exception should it get a request for a resource when it has none left to give. 
+Usually the best way to handle these kind of resources is through a [Resource Pool](https://martinfowler.com/bliki/ResourcePool.html) configured with a pool size of 1 and making it throw an exception should it get a request for a resource when it has none left to give.
