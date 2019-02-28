@@ -75,7 +75,7 @@ Additionally, when tests fail, you can see exactly which scenarios do not meet y
 ### Arranging Tests - AAA
 Arrange, Act, Assert is a common pattern when unit testing. As the name implies, it consists of three main actions:
 1. Arrange your objects, creating and setting them up as necessary.
-2. Act on an object.
+2. Act on an object - run the method to be tested. 
 3. Assert that something is as expected.
 
 This pattern:
