@@ -2,6 +2,9 @@
 From the 25th February - 1st of March, BGL put on a learning and development week, where we could spend the week on our own personal learning and development. I decided on spend that week on learning testing.
 
 ## Testing Documentation
+* [BGL Testing Documentation](http://confluence.bglgroup.net/pages/viewpage.action?pageId=38914119)
+  * [Unit Testing](http://confluence.bglgroup.net/display/TE/Unit+Testing)
+    + [Naming Conventions and Project Structure](http://confluence.bglgroup.net/display/TE/Unit+Testing#UnitTesting-NamingConventionandProjectStructure)
 * [Types of Testing](/Notes/testing-types.md)
 * [Unit Tests](/Notes/Unit-Tests.md)
   * [What are Unit Tests?](/Notes/Unit-Tests.md#what-are-unit-tests-)
