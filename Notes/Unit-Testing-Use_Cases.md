@@ -53,8 +53,13 @@ namespace StoreTests.Controllers
           [Test]
           public void Details_ValidId_ReturnsDetailsView()
           {
+              // Arrange
                var controller = new ProductController();
+
+               // Act
                var result = controller.Details(2) as ViewResult;
+
+               // Assert
                Assert.AreEqual("Details", result.ViewName);
 
           }
@@ -127,9 +132,14 @@ namespace StoreTests.Controllers
           [Test]
           public void Details_ValidId_PassesCorrectProductToViewData()
           {
+              // Arrange
                var controller = new ProductController();
+
+               // Act
                var result = controller.Details(2) as ViewResult;
                var product = (Product) result.ViewData.Model;
+
+               // Assert
                Assert.AreEqual("Laptop", product.Name);
           }
      }
@@ -180,8 +190,13 @@ namespace StoreTests.Controllers
           [Test]
           public void Details_InvalidId_RedirectsToIndex()
           {
+              // Arrange
                var controller = new ProductController();
+
+               // Act
                var result = (RedirectToRouteResult) controller.Details(-1);
+
+               // Assert
                Assert.AreEqual("Index", result.Values["action"]);
 
           }
