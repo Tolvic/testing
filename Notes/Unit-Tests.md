@@ -94,7 +94,7 @@ Tests that include more information than required to pass the test have a higher
 When writing tests you want to focus on the behavior. Setting extra properties on models or using non-zero values when not required, only detracts from what you are trying to prove.
 
 ### Avoid Magic Strings
-Magic strings are string values that are specified directly within application code that have an impact on the application’s behavior.
+Magic strings are strings that are specified directly within an application's code, that have an impact on the application’s behavior, without being assigned to a variable.
 
 Unit tests should not contain magic strings.
 
