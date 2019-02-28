@@ -47,10 +47,10 @@ using Store.Controllers;
 
 namespace StoreTests.Controllers
 {
-     [TestClass]
+     [TestFixture]
      public class ProductControllerTest
      {
-          [TestMethod]
+          [Test]
           public void Details_ValidId_ReturnsDetailsView()
           {
                var controller = new ProductController();
@@ -120,11 +120,11 @@ using Store.Controllers;
 
 namespace StoreTests.Controllers
 {
-     [TestClass]
+     [TestFixture]
      public class ProductControllerTest
      {
 
-          [TestMethod]
+          [Test]
           public void Details_ValidId_PassesCorrectProductToViewData()
           {
                var controller = new ProductController();
@@ -174,10 +174,10 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Store.Controllers;
 namespace StoreTests.Controllers
 {
-     [TestClass]
+     [TestFixture]
      public class ProductControllerTest
      {
-          [TestMethod]
+          [Test]
           public void Details_InvalidId_RedirectsToIndex()
           {
                var controller = new ProductController();
