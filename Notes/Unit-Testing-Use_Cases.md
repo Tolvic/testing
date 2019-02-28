@@ -51,7 +51,7 @@ namespace StoreTests.Controllers
      public class ProductControllerTest
      {
           [TestMethod]
-          public void TestDetailsView()
+          public void Details_ValidId_ReturnsDetailsView()
           {
                var controller = new ProductController();
                var result = controller.Details(2) as ViewResult;
@@ -125,7 +125,7 @@ namespace StoreTests.Controllers
      {
 
           [TestMethod]
-          public void TestDetailsViewData()
+          public void Details_ValidId_PassesCorrectProductToViewData()
           {
                var controller = new ProductController();
                var result = controller.Details(2) as ViewResult;
@@ -178,7 +178,7 @@ namespace StoreTests.Controllers
      public class ProductControllerTest
      {
           [TestMethod]
-          public void TestDetailsRedirect()
+          public void Details_InvalidId_RedirectsToIndex()
           {
                var controller = new ProductController();
                var result = (RedirectToRouteResult) controller.Details(-1);
