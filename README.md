@@ -64,6 +64,14 @@ From the 25th February - 1st of March, BGL put on a learning and development wee
     + [Remote Services](/Notes/Non-Deterministic-Tests.md#remote-services)
     + [Time](/Notes/Non-Deterministic-Tests.md#time)
     + [Resource Leaks](/Notes/Non-Deterministic-Tests.md#resource-leaks)
+* [Moq](/Notes/Moq.md)
+  * [Basic Setup](Notes/Moq.md#basic-setup)
+   + [Returning a Value](Notes/Moq.md#returning-a-value)
+   + [Passing a Mock as a Dependency](Notes/Moq.md#passing-a-mock-as-a-dependency)
+  * [Verification](Notes/Moq.md#verification)
+   + [Verifying that a Method is Called](Notes/Moq.md#verifying-that-a-method-is-called)
+   + [Verifying that a Method is Called x Number of Times](Notes/Moq.md#verifying-that-a-method-is-called-x-number-of-times)
+  * [Return a Different Value Each Time a Mocked Method is called](Notes/Moq.md#return-a-different-value-each-time-a-mocked-method-is-called)
 
 ## To Do
 Please note that the links in this section link to material to be/ has been reviewed. The output of these tasks can be found in the other sections of this document.
@@ -89,7 +97,7 @@ Please note that the links in this section link to material to be/ has been revi
   - [ ] Speed and performance
 - [ ] Mocking and stubbing with Moq
   - [ ] Review documentation
-  - [ ] Review MS documentation
+  - [x] Review MS documentation
   - [ ] [Mocking with Moq - Plural Site](https://www.pluralsight.com/courses/mocking-with-moq)
   - [ ] Best practices
   - [ ] Speed and performance
