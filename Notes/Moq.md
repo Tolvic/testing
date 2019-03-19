@@ -14,6 +14,12 @@ Mock objects allow you to mimic the behavior of classes and interfaces, letting 
 With mocks, you can set up the object, including giving parameters and return values on method calls and setting properties. You can also verify that the methods you set up are being called in the tested code.
 
 ## Basic Setup
+Add the following reference to Moq:
+
+```csharp
+using Moq;
+```
+
 The below would take part in the arrange part of unit test.
 
 1. Declare a new Mock Object:
